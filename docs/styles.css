@@ -456,6 +456,12 @@ footer a {
   line-height: 1.7;
 }
 
+.choice-table a {
+  color: var(--accent);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
 .signal--green {
   border-color: #688a72;
 }
