@@ -1,13 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${pathname}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -36,4 +36,16 @@ test("server-renders the family trip guide", async () => {
 
   const guideImages = new Set(html.match(/\/guide\/[^"\\]+\.png/g) ?? []);
   assert.equal(guideImages.size, 8);
+});
+
+test("server-renders the transport guide", async () => {
+  const response = await render("/transport-guide");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+
+  const html = await response.text();
+  assert.match(html, /交通・乗り換えガイド/);
+  assert.match(html, /西九条ではJRと阪神が別の改札/);
+  assert.match(html, /ユニバーサルシティ・桜島方面/);
+  assert.match(html, /北ターミナル1番/);
 });

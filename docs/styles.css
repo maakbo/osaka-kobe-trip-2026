@@ -32,7 +32,7 @@ a {
 
 .site-nav {
   display: flex;
-  width: min(100% - 40px, 960px);
+  width: min(calc(100% - 40px), 960px);
   min-height: 64px;
   align-items: center;
   justify-content: space-between;
@@ -67,7 +67,7 @@ a {
 .hero__inner,
 .guide,
 footer {
-  width: min(100% - 40px, 760px);
+  width: min(calc(100% - 40px), 760px);
   margin: 0 auto;
 }
 
@@ -171,14 +171,14 @@ h1 {
 }
 
 .detail-links {
-  width: min(100% - 40px, 960px);
+  width: min(calc(100% - 40px), 960px);
   margin: 0 auto;
   padding: 72px 0 0;
 }
 
 .detail-links__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   margin-top: 32px;
 }
@@ -299,7 +299,7 @@ footer a {
 }
 
 .detail-hero {
-  width: min(100% - 40px, 760px);
+  width: min(calc(100% - 40px), 760px);
   margin: 0 auto;
   padding: 72px 0 56px;
 }
@@ -317,7 +317,7 @@ footer a {
 }
 
 .detail-body {
-  width: min(100% - 40px, 760px);
+  width: min(calc(100% - 40px), 760px);
   margin: 0 auto;
   padding-bottom: 96px;
 }
@@ -516,19 +516,157 @@ footer a {
   text-underline-offset: 4px;
 }
 
+.route-summary {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.route-summary p {
+  margin: 0;
+  padding: 16px 18px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  color: var(--ink) !important;
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.transport-route {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.transport-step {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+.transport-step__number {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-family: Futura, "Century Gothic", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.transport-step h3 {
+  margin: 1px 0 6px;
+}
+
+.transport-step p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.sign {
+  display: inline-block;
+  margin: 6px 4px 0 0;
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink) !important;
+  font-size: 12px !important;
+  font-weight: 600;
+  line-height: 1.4 !important;
+}
+
+.direction-note {
+  margin: 16px 0 0;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink) !important;
+  font-size: 14px !important;
+}
+
+.direction-note strong {
+  color: var(--accent);
+}
+
+.warning-note {
+  margin: 16px 0 0;
+  padding: 16px 18px;
+  border-left: 3px solid #b98a16;
+  background: #faf5e9;
+  color: var(--ink) !important;
+  font-size: 14px !important;
+}
+
+.one-line {
+  margin: 24px 0 0;
+  padding: 18px 20px;
+  border: 1px solid rgb(47 119 121 / 28%);
+  border-radius: 6px;
+  background: #edf4f4;
+  color: var(--ink) !important;
+  font-size: 15px !important;
+  font-weight: 600;
+  line-height: 1.8 !important;
+}
+
+.one-line::before {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  content: "当日見せる一行";
+  font-family: Futura, "Century Gothic", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.compact-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.compact-list li {
+  margin: 0 !important;
+  padding: 12px 14px;
+  border-left: 2px solid var(--line);
+  background: var(--surface);
+  font-size: 14px;
+}
+
 @media (max-width: 620px) {
   .site-nav {
-    width: min(100% - 28px, 960px);
+    flex-direction: column;
+    width: auto;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 14px;
+    padding: 14px 0;
   }
 
   .site-nav div {
-    gap: 14px;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    white-space: nowrap;
   }
 
   .hero__inner,
   .guide,
   footer {
-    width: min(100% - 28px, 760px);
+    width: auto;
+    margin-right: 14px;
+    margin-left: 14px;
   }
 
   .hero__inner {
@@ -571,7 +709,9 @@ footer a {
   }
 
   .detail-links {
-    width: min(100% - 28px, 960px);
+    width: auto;
+    margin-right: 14px;
+    margin-left: 14px;
     padding-top: 52px;
   }
 
@@ -593,7 +733,9 @@ footer a {
 
   .detail-hero,
   .detail-body {
-    width: min(100% - 28px, 760px);
+    width: auto;
+    margin-right: 14px;
+    margin-left: 14px;
   }
 
   .detail-hero {
@@ -607,6 +749,11 @@ footer a {
   .timeline__item {
     grid-template-columns: 72px 1fr;
     gap: 14px;
+  }
+
+  .transport-step {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
   }
 
   .choice-table {

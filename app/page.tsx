@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const guidePages = [
   {
     src: "/guide/overview.png",
@@ -44,6 +46,15 @@ const guidePages = [
 export default function Home() {
   return (
     <main>
+      <nav className="site-nav" aria-label="ページメニュー">
+        <Link className="site-nav__brand" href="/">
+          TRIP GUIDE
+        </Link>
+        <div>
+          <a href="/transport-guide">交通</a>
+        </div>
+      </nav>
+
       <header className="hero">
         <div className="hero__inner">
           <div className="eyebrow">
@@ -58,7 +69,7 @@ export default function Home() {
               <p className="lead">
                 家族3人で、夏の大阪・USJ・神戸へ。
                 <br />
-                全部回るより、笑って終われる旅に。
+                大阪と神戸を、家族でゆっくり味わう旅。
               </p>
             </div>
 
@@ -83,6 +94,21 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      <section className="detail-links" aria-labelledby="detail-title">
+        <div className="section-heading">
+          <p>DETAIL NOTES</p>
+          <h2 id="detail-title">詳しい旅の案内</h2>
+          <span>空港と駅で迷ったときに、そのまま確認できます。</span>
+        </div>
+        <div className="detail-links__grid">
+          <a className="detail-card" href="/transport-guide">
+            <span>01</span>
+            <h3>交通・乗り換え</h3>
+            <p>空港、バス、改札、電車を迷わず移動する手順。</p>
+          </a>
+        </div>
+      </section>
 
       <section className="guide" id="guide" aria-labelledby="guide-title">
         <div className="section-heading">
