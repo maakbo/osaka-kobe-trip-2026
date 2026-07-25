@@ -52,6 +52,12 @@ export default function Home() {
         </Link>
         <div>
           <a href="/transport-guide">交通</a>
+          <a href="https://maakbo.github.io/osaka-kobe-trip-2026/usj-guide.html">
+            USJ
+          </a>
+          <a href="https://maakbo.github.io/osaka-kobe-trip-2026/prepare.html">
+            準備
+          </a>
         </div>
       </nav>
 
@@ -106,6 +112,22 @@ export default function Home() {
             <span>01</span>
             <h3>交通・乗り換え</h3>
             <p>空港、バス、改札、電車を迷わず移動する手順。</p>
+          </a>
+          <a
+            className="detail-card"
+            href="https://maakbo.github.io/osaka-kobe-trip-2026/usj-guide.html"
+          >
+            <span>02</span>
+            <h3>USJ当日ガイド</h3>
+            <p>家族で決めた優先順位、朝の分岐、暑さと体力の判断。</p>
+          </a>
+          <a
+            className="detail-card"
+            href="https://maakbo.github.io/osaka-kobe-trip-2026/prepare.html"
+          >
+            <span>03</span>
+            <h3>準備と持ち物</h3>
+            <p>手元バッグ、暑さ対策、トランクの最終チェック。</p>
           </a>
         </div>
       </section>
