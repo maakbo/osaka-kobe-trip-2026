@@ -161,7 +161,7 @@ export default function TransportGuide() {
             <li>大阪周遊パスや地下鉄1日券は買わず、都度払いにする。</li>
             <li>Suica、PASMO、ICOCAなどはJR・阪神・地下鉄・空港バスで使える。</li>
             <li>鉄道改札では一人につきICカード一枚またはスマホ一台が必要。</li>
-            <li>娘が小児用ICを持っていなければ、小児きっぷを券売機で買う。</li>
+            <li>娘は小児用ICを使わず、小児きっぷを券売機で買う。</li>
             <li>空港バスでIC一枚から3人分を払うなら、タッチ前に大人2名・こども1名と乗務員へ伝える。</li>
           </ul>
           <table className="choice-table">
@@ -350,7 +350,7 @@ export default function TransportGuide() {
           <ul className="compact-list">
             <li>ANA 732便と737便の運航予定を確認する。</li>
             <li>伊丹空港発USJ行きの09:55便と10:55便を確認する。</li>
-            <li>ICカードへチャージし、娘は小児ICか小児きっぷか決める。</li>
+            <li>大人のICカードへチャージし、娘用の小児きっぷは移動ごとに券売機で買う。</li>
             <li>この交通ガイドを家族のスマホで開けるか確認する。</li>
             <li>基本ルートの「当日見せる一行」をスクリーンショットする。</li>
           </ul>
