@@ -552,6 +552,22 @@ footer a {
   font-size: 17px;
 }
 
+.timeline__item .now-marker {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 7px 4px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: Futura, "Century Gothic", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  vertical-align: 0.15em;
+  white-space: nowrap;
+}
+
 .timeline__item p {
   margin: 6px 0 0;
   font-size: 13px;
