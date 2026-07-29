@@ -387,6 +387,113 @@ footer a {
   font-size: 14px !important;
 }
 
+.deadline-note {
+  margin: 14px 0 0;
+  padding: 14px 18px;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--ink) !important;
+  font-size: 14px !important;
+  line-height: 1.8;
+}
+
+.walk-map {
+  margin: 18px 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.walk-map__title {
+  margin: 0 0 14px !important;
+  color: var(--ink) !important;
+  font-size: 16px !important;
+  font-weight: 700;
+}
+
+.walk-map__title span {
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.walk-map__river {
+  margin-bottom: 18px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 12px;
+  text-align: right;
+}
+
+.walk-map__stops {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.walk-map__stops::before {
+  position: absolute;
+  top: 15px;
+  right: 8%;
+  left: 8%;
+  height: 2px;
+  background: var(--accent);
+  content: "";
+}
+
+.walk-map__stops li {
+  position: relative;
+  z-index: 1;
+  margin: 0 !important;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.walk-map__stops span {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.walk-map__stops strong,
+.walk-map__stops small {
+  display: block;
+}
+
+.walk-map__stops small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.walk-map__link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.walk-map__link::after {
+  margin-left: 6px;
+  content: "↗";
+}
+
 .mini-grid,
 .signal-grid,
 .mode-grid {
@@ -749,6 +856,35 @@ footer a {
   .timeline__item {
     grid-template-columns: 72px 1fr;
     gap: 14px;
+  }
+
+  .walk-map__stops {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .walk-map__stops::before {
+    top: 15px;
+    bottom: 15px;
+    left: 15px;
+    width: 2px;
+    height: auto;
+  }
+
+  .walk-map__stops li {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    column-gap: 10px;
+    padding-bottom: 12px;
+  }
+
+  .walk-map__stops span {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .walk-map__stops small {
+    margin-top: 0;
   }
 
   .transport-step {
