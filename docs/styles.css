@@ -141,6 +141,10 @@ h1 {
   font-weight: 600;
 }
 
+.mobile-route-break {
+  display: none;
+}
+
 .actions {
   display: flex;
   gap: 12px;
@@ -920,9 +924,8 @@ footer a {
   }
 
   .hero__side {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    display: grid;
+    gap: 8px;
     margin-top: 30px;
     padding-top: 18px;
     border-top: 1px solid var(--line);
@@ -934,7 +937,14 @@ footer a {
   }
 
   .hero__side p:last-child {
-    text-align: right;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .mobile-route-break {
+    display: block;
   }
 
   .actions {
